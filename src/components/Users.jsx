@@ -12,30 +12,37 @@ const Users = () => {
     );
 
     const displayUserDetails = () => {
-        const userWithId = users.filter(function(user) { return `${user.id}` === `${id}`; });
-        const {name, username, email, address, phone, website, company} = userWithId[0];
+        let userWithId = null;
 
-        return(
-            <div>
-                <h2 className="user-name-title">{name}</h2>
-                <p><b>Username:</b> {username}</p>
-                <p><b>Email:</b> {email}</p>
-                <p><b>Address:</b> {address.street},&nbsp; 
-                            {address.suite},&nbsp;
-                            {address.city},&nbsp;
-                            {address.zipcode}
-                </p>
-                <p><b>Phone:</b> {phone}</p>
-                <p><b>Website:</b> {website}</p>
-
-                <div className="company-info">
-                    <h5>Company</h5>
-                    <p><b>Name:</b> {company.name}</p>
-                    <p><b>Catch-phrase:</b> {company.catchPhrase}</p>
-                    <p><b>BS:</b> {company.bs}</p>
+        try{
+            userWithId = users.filter(function(user) { return `${user.id}` === `${id}`; });
+            const {name, username, email, address, phone, website, company} = userWithId[0];
+            
+            return(
+                <div className="user-info">
+                    <h2 className="user-name-title">{name}</h2>
+                    <p><b>Username:</b> {username}</p>
+                    <p><b>Email:</b> {email}</p>
+                    <p><b>Address:</b> {address.street},&nbsp; 
+                                {address.suite},&nbsp;
+                                {address.city},&nbsp;
+                                {address.zipcode}
+                    </p>
+                    <p><b>Phone:</b> {phone}</p>
+                    <p><b>Website:</b> {website}</p>
+    
+                    <div className="company-info">
+                        <h6>Company</h6>
+                        <p><small><b>Name:</b> {company.name}</small></p>
+                        <p><small><b>Catch-phrase:</b> {company.catchPhrase}</small></p>
+                        <p><small><b>BS:</b> {company.bs}</small></p>
+                    </div>
                 </div>
-            </div>
-        );
+            );
+
+        }catch{
+
+        }
     };
 
     return(
@@ -45,9 +52,7 @@ const Users = () => {
                     {displayUsers}
                 </ListGroup>
             </div>
-            <div className="user-info">
-                {displayUserDetails()}
-            </div>
+            {displayUserDetails()}
         </div>
     );
 };

@@ -36,3 +36,20 @@
     transform: rotate(360deg);
   }
 }
+
+.content{
+  margin: 2%;
+  margin-left: 5%;
+  margin-right: 5%;
+}
+
+.user-info{
+  margin-top: 5%;
+  padding: 2%;
+  background-color: rgb(214, 214, 214);
+  border: #282c34;
+}
+
+.user-name-title{
+  margin-bottom: 5%;
+}

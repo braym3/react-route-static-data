@@ -1,33 +1,28 @@
 import photos from "../static-data/photos.json";
-import { Table } from 'reactstrap';
+import { Card, CardBody, CardTitle, CardLink, CardText } from 'reactstrap';
 
 const Photos = () => {
 
     const displayPhotos = photos.map(photo =>
-        <tr key={photo.id}>
-            <td>{photo.albumId}</td>
-            <td>{photo.title}</td>
-            <td>{photo.url}</td>
-            <td>{photo.thumbnailUrl}</td>
-        </tr>
+        <Card key={photo.id} style={{width: '12rem'}} className="user-card">
+            <img
+                alt="Card"
+                src={photo.thumbnailUrl}
+            />
+            <CardBody>
+                <CardTitle tag="h5">{photo.title}</CardTitle>
+                <CardText>
+                    Album ID: {photo.albumId}
+                </CardText>
+                <CardLink href={photo.url}>Full size</CardLink>
+            </CardBody>
+        </Card>
     );
 
     return(
         <>
-            <div className='content'>
-                <Table striped bordered hover size="sm">
-                    <thead>
-                        <tr>
-                            <th>Album ID</th>
-                            <th>Title</th>
-                            <th>URL</th>
-                            <th>Thumbnail URL</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        {displayPhotos}
-                    </tbody>
-                </Table>
+            <div className='row content'>
+                {displayPhotos}
             </div>
         </>
     );

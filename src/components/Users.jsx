@@ -13,18 +13,27 @@ const Users = () => {
 
     const displayUserDetails = () => {
         const userWithId = users.filter(function(user) { return `${user.id}` === `${id}`; });
-        const {name, username, email, address} = userWithId[0];
+        const {name, username, email, address, phone, website, company} = userWithId[0];
 
         return(
             <div>
                 <h2 className="user-name-title">{name}</h2>
-                <p>Username: {username}</p>
-                <p>Email: {email}</p>
-                <p>Address: {address.street},&nbsp; 
+                <p><b>Username:</b> {username}</p>
+                <p><b>Email:</b> {email}</p>
+                <p><b>Address:</b> {address.street},&nbsp; 
                             {address.suite},&nbsp;
                             {address.city},&nbsp;
                             {address.zipcode}
                 </p>
+                <p><b>Phone:</b> {phone}</p>
+                <p><b>Website:</b> {website}</p>
+
+                <div className="company-info">
+                    <h5>Company</h5>
+                    <p><b>Name:</b> {company.name}</p>
+                    <p><b>Catch-phrase:</b> {company.catchPhrase}</p>
+                    <p><b>BS:</b> {company.bs}</p>
+                </div>
             </div>
         );
     };

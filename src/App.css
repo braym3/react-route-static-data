@@ -53,3 +53,9 @@
 .user-name-title{
   margin-bottom: 5%;
 }
+
+.company-info{
+  background-color: rgb(162, 202, 255);
+  margin: 5%;
+  padding: 2%;
+}

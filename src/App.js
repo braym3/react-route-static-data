@@ -9,6 +9,7 @@ import Albums from './components/Albums';
 import Photos from './components/Photos';
 import Todos from './components/Todos';
 import Users from './components/Users';
+import FilmRequest from './components/FilmRequest';
 
 function App() {
   return (
@@ -38,6 +39,9 @@ function App() {
       </Route>
       <Route path="/users/:id">
         <Users/>
+      </Route>
+      <Route path="/films">
+        <FilmRequest/>
       </Route>
     </BrowserRouter>
     </>

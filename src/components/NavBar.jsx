@@ -40,6 +40,11 @@ const NavBar = () => {
                     Users
                     </NavLink>
                 </NavItem>
+                <NavItem>
+                    <NavLink tag={Link} to="/films">
+                    Films
+                    </NavLink>
+                </NavItem>
             </Nav>
         </div>
     );
